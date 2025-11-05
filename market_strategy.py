@@ -40,7 +40,6 @@ import networkx as nx
 from collections import deque
 
 def market_clearing(graph, buyers, sellers, interactive=False):
-    # initialize prices for sellers
     for s in sellers:
         graph.nodes[s]["price"] = graph.nodes[s].get("price", 0)
 
@@ -56,14 +55,11 @@ def market_clearing(graph, buyers, sellers, interactive=False):
             matched_pairs = {b: matching[b] for b in buyers if b in matching}
             print(f"Round {i}: prices={price}, demand={demand_edges}, matching={matched_pairs}")
 
-        # stop when every buyer matched
         if is_perfect_matching(matching, buyers):
             return matching, price
 
-        # find constricted seller set
         buyer_set, seller_set = constricted_set(demand, matching, buyers)
 
-        # --- FIX 1: fallback when constricted_set empty
         if not seller_set:
             counts = {s: 0 for s in sellers}
             for b in buyers:
@@ -73,7 +69,6 @@ def market_clearing(graph, buyers, sellers, interactive=False):
             if not seller_set:
                 raise RuntimeError("No constricted or overdemanded sellers found.")
 
-        # --- FIX 2: raise prices for those sellers
         for s in seller_set:
             graph.nodes[s]['price'] += 1
 
