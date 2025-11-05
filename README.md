@@ -1,5 +1,7 @@
 Market Strategy
 ===============
+Member 1: Azim Qudrat - ID: 0301851166
+Member 2: Berit Cheema - ID: 033454757
 
 Overview
 --------
