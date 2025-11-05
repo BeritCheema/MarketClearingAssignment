@@ -1,0 +1,31 @@
+Objective:
+This assignment aims to develop practical proficiency in Python programming, specifically focusing on the manipulation of bipartite graphs. Additionally, it seeks to enhance your understanding of the market-clearing algorithm. Mastering these skills will not only strengthen your programming capabilities but also elevate your proficiency and competitiveness in the dynamic field of Computer Science.
+
+Requirement
+
+This is the command to execute the Python script market_strategy.py located in the current directory reads the file market.gml. Here, market.gml will be used for the analysis and the format is Graph Modelling Language (.gml), which describes the graph's structure with attributes. The program should read the attributes of the nodes and edges in the file.
+
+python ./market_strategy.py market.gml --plot --interactive
+
+market.gml encodes a bipartite graph of 2n nodes with two sets A=(0, 1, .. n-1) and B=(n-1, n, .. 2n-1) where the nodes of set A have a price and the valuations of set B are set as attributes of the edges 
+
+
+Description of Parameters
+The script market_strategy.py must be located in the current directory. Ensure robust file handling mechanisms such as error checking, file existence validation, and appropriate error messages.
+
+--plot
+
+Requests that the graph be plotted. This parameter triggers the visualization of the graph, which can include plotting nodes, edges, and possibly additional metrics or shortest path highlights.
+
+--interactive
+
+Requests that the program show the output of every round graph. A round is defined as obtaining the preference
+seller graph, compute the constricted sets via matching, and update the valuation.
+
+ 
+Evaluation:
+
+Your implementation will be evaluated based on correctness, efficiency, clarity of code, and the quality of graph visualization. Ensure your program handles edge cases such as empty graphs, non-existent files, and invalid inputs gracefully.
+Submission:
+
+Submit your source code files along with a README.md file detailing instructions on how to use your program.
